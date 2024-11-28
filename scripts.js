@@ -4,6 +4,8 @@ function uploadFiles() {
   const files = fileInput.files;
   const gallery = document.getElementBId('gallery');
 
+  gallery.innerHTML = '';  // Clear the gallery before adding new images
+  
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     const reader = new FileReader();
