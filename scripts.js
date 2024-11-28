@@ -30,7 +30,7 @@ function displaySelectedFiles() {
 function uploadFiles() {
   const fileInput = document.getElementById('fileInput');
   const files = fileInput.files;
-  const gallery = document.getElementBId('gallery');
+  const gallery = document.getElementById('gallery');
 
   gallery.innerHTML = '';  // Clear the gallery before adding new images
   
