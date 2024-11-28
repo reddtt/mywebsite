@@ -4,9 +4,9 @@ document.getElementById('fileInput').addEventListener('change', displaySelectedF
 function displaySelectedFiles() {
   const fileInput = document.getEelementById('fileInput');
   const files = fileInput.files;
-  const selectedFilesDiv = document.getElementById('selectedFiles');
+  const gallery = document.getElementById('gallery');
 
-  selectedFilesDiv.innerHTML = '';  // Clear the current selection
+  gallery.innerHTML = '';  // Clear the current selection
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -14,13 +14,13 @@ function displaySelectedFiles() {
 
     reader.onload = function(event) {
       const imgElement = document.createElement('img');
-      imgElement.src = event.target.resultl
+      imgElement.src = event.target.result;
 
       const galleryItem = document.createElement('div');
       galleryItem.classList.add('gallery-item');
       galleryItem.appendChild(imgElement);
 
-      selectedFilesDiv.appendChild(galleryItem);
+      gallery.appendChild(galleryItem);
     }
     
     reader.readAsDataURL(file);
