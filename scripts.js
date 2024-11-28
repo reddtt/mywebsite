@@ -2,7 +2,7 @@
 document.getElementById('fileInput').addEventListener('change', displaySelectedFiles);
 
 function displaySelectedFiles() {
-  const fileInput = document.getEelementById('fileInput');
+  const fileInput = document.getElementById('fileInput');
   const files = fileInput.files;
   const gallery = document.getElementById('gallery');
 
