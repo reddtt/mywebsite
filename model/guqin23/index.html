@@ -19,6 +19,7 @@
     <script type="module">
         import * as THREE from 'three';
         import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+        import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
         import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
         // Set up the scene, camera, and renderer
@@ -36,8 +37,13 @@
         directionalLight.position.set(5, 5, 5).normalize();
         scene.add(directionalLight);
 
-        // Load the 3D model
+        // Set up GLTFLoader with DRACOLoader
         const loader = new GLTFLoader();
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/libs/draco/');
+        loader.setDRACOLoader(dracoLoader);
+
+        // Load the 3D model
         loader.load(
             'https://reddtt.github.io/mywebsite/model/guqin23/Guqin1_c.glb', // Use GitHub Pages URL
             (gltf) => {
