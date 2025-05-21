@@ -11,8 +11,8 @@
     <script type="importmap">
         {
             "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.module.js",
-                "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/"
+                "three": "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js",
+                "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/"
             }
         }
     </script>
@@ -31,16 +31,16 @@
         renderer.setClearColor(0x333333); // Dark gray background
 
         // Add lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Brighter ambient light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
         scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 2); // Stronger directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
         directionalLight.position.set(5, 5, 5).normalize();
         scene.add(directionalLight);
 
         // Set up GLTFLoader with DRACOLoader
         const loader = new GLTFLoader();
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/libs/draco/');
+        dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/libs/draco/gltf/');
         loader.setDRACOLoader(dracoLoader);
 
         // Load the 3D model
